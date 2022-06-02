@@ -11,7 +11,7 @@ body{  height: 100vh;
   background-position:center;
   display: flex;
   align-items:center;
-  justify-content:right;
+  justify-content:center;
   perspective: 1000px;
   overflow: hidden;
 }
@@ -21,26 +21,30 @@ h3{
   margin: 0;
   padding-top: 10px;
 }
+p{
+  font-size:2.5vh;
+}
 a{
   text-decoration: none;
 }
 .box{
-  height: 56vh;
- width: 38vh;
+  height: 54vh;
+ width: 39vh;
  color:black;
  background: white;
  position:absolute;
- border-radius: 2px 10px 10px 2px;
+ border-radius: 30px 30px 30px 30px;
  z-index: -1;
   box-sizing: border-box;
   float: left;
   text-align: center;
   cursor: pointer;
-  padding-top: 0;
+  padding:2px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 10px 10px rgba(0,0,0,.22);
   transition: .4s;
   background-color: #f2f2f2;
+  margin: 5px;
 }
 .box-1{
   transform: rotateY(170deg);
@@ -61,8 +65,8 @@ a{
   margin:0;
   display: block;
   padding:0;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
   object-fit: cover;
   object-position: center;
 }
@@ -71,12 +75,13 @@ a{
   font-size: 24px;
   color: white;
   width: 100%;
+  height: 7.5vh;
 padding: 5px;
 outline: none;
 border: 0;
 margin-top: 5px;
-border-bottom-right-radius: 2px;
-border-bottom-left-radius: 2px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 30px;
 cursor: pointer;
 }
 .button-1{
@@ -86,123 +91,12 @@ cursor: pointer;
   background-color: #1628DC;
 }
 .book{
+  margin-top: 500px;
   background-color: white;
   display: flex;
-  margin-bottom: 0;
-  margin-right:400px;
+  align-items: center;
   cursor: pointer;
 }
-.cover,.five,
-.back-cover{
-  height: 60vh;
-  width: 42vh;
-  background-color: #353755;
-  border-radius: 2px 20px 20px 2px;
-  position: absolute;
-  box-shadow: 1px 1px 10px gray;
-  transform: translateX(0) rotateX(75deg) skewX(20deg) skewY(-20deg);
-  transform-origin: center left;
-}
-.last,
-.page{
-  margin-top: 10px;
-  height: 56vh;
- width: 38vh;
- background: white;
- position:absolute;
- border-radius: 2px 10px 10px 2px;
- transform: translateX(0) rotatex(75deg) skewX(20deg) skewY(-20deg);
- z-index: -1;
- transform-origin: center left;
-}
-
-.toggle input{
-  display: none;
-}
-.toggle input:checked~.book{
-animation: right-to-left 1s ease-in forwards;
-}/*
-.toggle input:not(:checked)~.book{
-animation: left-to-right 1s ease-in forwards;
-}*/
-.toggle input:checked~.book .cover{
-animation: cover 2s ease-in forwards;
-}
-.toggle input:checked~.book .page{
-animation: page 1s ease-in forwards;
-}
-.toggle input:checked~.book .back-cover{
-animation: back-cover 1s ease-in forwards;
-}
-.toggle input:checked~.book .first{
-  animation: first 2.1s ease-in forwards;
-}
-@keyframes first {
-  50%{
-    transform:translateX(-100%)rotateX(10deg);
-  }
-  100%{z-index: 1;
-    transform:translateX(-120%)rotateX(10deg)rotateY(180deg);
-    animation-timing-function: ease-in;
-  }
-  }
-.toggle input:checked~.five{
-  animation: last 5s ease-in forwards;
-}
-@keyframes five {
-  50%{
-  transform:translateX(50%)rotateX(10deg);
-   }
-  100%{
-    transform:translateX(-100%)rotateX(50deg)rotateY(180deg)
-  }
-}
-@keyframes cover {
-  50%{
-    transform:translateX(-100%)rotateX(10deg);
-  }
-  100%{
-    transform:translateX(-100%)rotateX(10deg)rotateY(180deg);
-    animation-timing-function: ease-in;
-  }
-
-}
-@keyframes back-cover {
-  100%{
-    z-index: -1;
-    transform:translateX(-100%)rotateX(10deg);
-  }
-}
-@keyframes page {
-  100%{
-    z-index: 0;
-  transform:translateX(-100%)rotateX(10deg);
- }
-}
-@keyframes right-to-left {
-  0%{
-    margin-bottom:0;
-    transform: translateX(0) rotateX(75deg) skewX(20deg) skewY(-20deg);
-  }
-  50%{
-    margin-bottom:200px;
-    transform: translateX(0) rotateX(75deg) skewX(20deg) skewY(-20deg);
-  }
-  100%{
-    margin-bottom: 300px;
-    transform:translateX(100%) rotateX(10deg);
-  }
-}
-@keyframes left-to-right {
-  100%{
-    transform: translateX(0) rotateX(75deg) skewX(20deg) skewY(-20deg);
-  }
-  0%{
-    transform:translateX(100%) rotateX(10deg);
-  }
-}
-
-
 .cover{
   z-index: 1;
   transition: all 3s;
@@ -210,3 +104,103 @@ animation: back-cover 1s ease-in forwards;
 .back-cover{
   z-index: -2;
 }
+.cover-pic{
+  height: 60vh;
+  width: 42vh;;
+  background-color: #353755;
+  border-radius: 2px 20px 20px 2px;
+  position: absolute;
+  box-shadow: 1px 1px 10px gray;
+  transform-origin: center left;
+}
+.cover,
+.back-cover{
+  height: 60vh;
+  width: 42vh;;
+  background-color: #353755;
+  border-radius: 2px 20px 20px 2px;
+  position: absolute;
+  box-shadow: 1px 1px 10px gray;
+  transform: rotateX(60deg) translateY(-50px) skewX(-5deg) skewY(5deg) ;
+  transform-origin: center left;
+}
+.page{
+  height: 56vh;
+ width: 40vh;
+ background:white;
+ position: absolute;
+ border-radius: 30px 30px 30px 30px;
+ transform:rotateX(60deg) translateY(-50px) skewX(-5deg) skewY(5deg);
+ z-index:-1;
+ transform-origin: center left;
+}
+
+.toggle input{
+  display: none;
+}
+.toggle input:checked~.book .cover{
+animation: cover 5s ease-in forwards;
+}
+.toggle input:checked~.book .page{
+animation: page 5s ease-in forwards;
+}
+.toggle input:checked~.book .back-cover{
+animation: back-cover 5s ease-in forwards;
+}
+.toggle input:checked~.book .first{
+  animation: first 5.1s ease-in forwards;
+}
+@keyframes first {
+  50%{
+    margin-bottom: 300px;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    margin-bottom: 400px;
+    z-index: 1;
+    transform:translateX(-2%)rotateX(10deg)rotateY(180deg);
+    animation-timing-function: ease-in;
+  }
+  }
+@keyframes cover {
+  50%{
+    margin-bottom: 300px;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    margin-bottom: 400px;
+    transform:rotateX(10deg)rotateY(180deg);
+    animation-timing-function: ease-in;
+  }
+
+}
+@keyframes page{
+  50%{
+    margin-bottom: 300px;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    margin-bottom: 400px;
+    z-index: 1;
+    transform:translateX(2%)rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  }
+@keyframes back-cover {
+  50%{
+    margin-bottom: 300px;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    margin-bottom: 400px;
+    z-index: -1;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+
