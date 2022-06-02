@@ -147,6 +147,9 @@ cursor: pointer;
 .toggle input{
   display: none;
 }
+/* Input checked Animation */
+
+
 .toggle input:checked~.book .cover{
 animation: cover 1.6s ease-in forwards;
 }
@@ -159,6 +162,26 @@ animation: back-cover 1.6s ease-in forwards;
 .toggle input:checked~.book .first{
   animation: first 1.6s ease-in forwards;
 }
+
+
+/* INPUT NOT CHECKED Animation*/
+
+.toggle input:not(:checked)~.book .cover{
+  animation: cover-back 1.6s ease-in forwards alternate-reverse;
+  }
+  .toggle input:not(:checked)~.book .page{
+    animation: page-back 1.6s ease-in forwards alternate-reverse;
+    }
+    .toggle input:not(:checked)~.book .back-cover{
+    animation: back-cover-back 1.6s ease-in forwards alternate-reverse;
+    }
+    .toggle input:not(:checked)~.book .first{
+      animation: first-back 1.6s ease-in forwards alternate-reverse;  
+    }
+
+
+/* Input checked keyframe */
+
 @keyframes first {
   50%{
     margin-bottom: 300px;
@@ -211,3 +234,54 @@ animation: back-cover 1.6s ease-in forwards;
 }
 
 
+/* Input not checked  keyframes */
+
+@keyframes cover-back {
+  50%{
+    margin-bottom: 300px;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    margin-bottom: 400px;
+    transform:rotateX(10deg)rotateY(180deg);
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes first-back {
+  50%{
+    margin-bottom: 300px;
+    transform:rotateX(10deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    z-index: 2;
+    margin-bottom: 400px;
+    transform:translateX(0%)rotateX(10deg)rotateY(180deg);
+    animation-timing-function: ease-in;
+  }
+  }
+  @keyframes page-back{
+    50%{
+      margin-bottom: 300px;
+      transform:rotateX(10deg);
+      animation-timing-function: ease-in;
+    }
+    100%{
+      margin-bottom: 400px;
+      transform:translateX(2%)rotateX(10deg);
+      animation-timing-function: ease-in;
+    }
+    }
+  @keyframes back-cover-back {
+    50%{
+      margin-bottom: 300px;
+      transform:rotateX(10deg);
+      animation-timing-function: ease-in;
+    }
+    100%{
+      margin-bottom: 400px;
+      transform:rotateX(10deg);
+      animation-timing-function: ease-in;
+    }
+  }
