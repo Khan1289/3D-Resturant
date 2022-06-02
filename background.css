@@ -39,12 +39,12 @@ a{
   float: left;
   text-align: center;
   cursor: pointer;
-  padding:2px;
+  padding:0px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 10px 10px rgba(0,0,0,.22);
   transition: .4s;
   background-color: #f2f2f2;
-  margin: 5px;
+  margin: 10px;
 }
 .box-1{
   transform: rotateY(170deg);
@@ -79,7 +79,7 @@ a{
 padding: 5px;
 outline: none;
 border: 0;
-margin-top: 5px;
+margin-top: 8px;
 border-bottom-right-radius: 30px;
 border-bottom-left-radius: 30px;
 cursor: pointer;
@@ -98,7 +98,7 @@ cursor: pointer;
   cursor: pointer;
 }
 .cover{
-  z-index: 1;
+  z-index: 2;
   transition: all 3s;
 }
 .back-cover{
@@ -110,7 +110,6 @@ cursor: pointer;
   background-color: #353755;
   border-radius: 2px 20px 20px 2px;
   position: absolute;
-  box-shadow: 1px 1px 10px gray;
   transform-origin: center left;
 }
 .cover,
@@ -127,28 +126,38 @@ cursor: pointer;
 .page{
   height: 56vh;
  width: 40vh;
- background:white;
+ background:#353755;
  position: absolute;
- border-radius: 30px 30px 30px 30px;
+ border-radius: 10px 10px 10px 1px;
  transform:rotateX(60deg) translateY(-50px) skewX(-5deg) skewY(5deg);
- z-index:-1;
  transform-origin: center left;
+ z-index: -1;
 }
-
+.first{
+  height: 60vh;
+  width: 42vh;;
+  background-color: #353755;
+  border-radius: 2px 20px 20px 2px;
+  position: absolute;
+  box-shadow: 1px 1px 10px gray;
+  transform: rotateX(60deg) translateY(-50px) skewX(-5deg) skewY(5deg) ;
+  transform-origin: center left;
+  z-index: 0;
+}
 .toggle input{
   display: none;
 }
 .toggle input:checked~.book .cover{
-animation: cover 5s ease-in forwards;
+animation: cover 1.6s ease-in forwards;
 }
 .toggle input:checked~.book .page{
-animation: page 5s ease-in forwards;
+animation: page 1.6s ease-in forwards;
 }
 .toggle input:checked~.book .back-cover{
-animation: back-cover 5s ease-in forwards;
+animation: back-cover 1.6s ease-in forwards;
 }
 .toggle input:checked~.book .first{
-  animation: first 5.1s ease-in forwards;
+  animation: first 1.6s ease-in forwards;
 }
 @keyframes first {
   50%{
@@ -157,9 +166,9 @@ animation: back-cover 5s ease-in forwards;
     animation-timing-function: ease-in;
   }
   100%{
+    z-index: 2;
     margin-bottom: 400px;
-    z-index: 1;
-    transform:translateX(-2%)rotateX(10deg)rotateY(180deg);
+    transform:translateX(0%)rotateX(10deg)rotateY(180deg);
     animation-timing-function: ease-in;
   }
   }
@@ -184,7 +193,6 @@ animation: back-cover 5s ease-in forwards;
   }
   100%{
     margin-bottom: 400px;
-    z-index: 1;
     transform:translateX(2%)rotateX(10deg);
     animation-timing-function: ease-in;
   }
@@ -197,7 +205,6 @@ animation: back-cover 5s ease-in forwards;
   }
   100%{
     margin-bottom: 400px;
-    z-index: -1;
     transform:rotateX(10deg);
     animation-timing-function: ease-in;
   }
